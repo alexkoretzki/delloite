@@ -1,0 +1,5 @@
+<div *ngIf="isInvalid() && messages.length" class="help is-danger">
+  <p *ngFor="let message of messages">
+    {{ message }}
+  </p>
+</div>

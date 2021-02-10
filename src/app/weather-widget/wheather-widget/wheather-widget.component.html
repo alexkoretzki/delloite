@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+  <div class="row">
+    <div class="col-md-4">
+      <select
+        class="custom-select"
+        (change)="changeCity($event)"
+        formControlName="city"
+      >
+        <option value="bangkok" selected>Bangkok</option>
+        <option value="london">London</option>
+        <option value="paris">Paris</option>
+      </select>
+    </div>
+    <div class="col-md-3 offset-md-1">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="units"
+        formControlName="unit"
+      />
+      <app-error [formInput]="getFormControl('unit')"></app-error>
+    </div>
+    <div class="col-md-3 offset-md-1">
+      <div class="plus alt" (click)="submitForm()"></div>
+    </div>
+  </div>
+</form>
+
+<h2>{{ wheatherItem?.city }} {{ wheatherItem?.temp }}</h2>
